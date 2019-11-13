@@ -1,0 +1,17 @@
+{
+  "name": "shell-spawn",
+  "version": "1.0.0",
+  "description": "Simply spawning a command in a (new) shell/terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
+}
