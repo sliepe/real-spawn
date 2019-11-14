@@ -1,5 +1,4 @@
-import ShellSpawn from './shell-spawn/shell-spawn.js';
+import ShellSpawn from './shell-spawn/shell-spawn.js'; // We need tsconfig-paths then, if working with path`s compiler option
 
-new ShellSpawn();
-
-console.log('index.js');
+const shellSpawn = ShellSpawn.getInstance();
+shellSpawn.execute();
