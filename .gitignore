@@ -1,0 +1,10 @@
+# ignore everything ...
+/*
+# ... but not the following
+!/index.*
+!/shell-spawn
+!/package.json
+!/package-lock.json
+!/.gitignore
+!/example
+!/README.md

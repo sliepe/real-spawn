@@ -1,0 +1,7 @@
+# ignore everything ...
+/*
+# ... but not the following
+!/example.js
+!/package.json
+!/package-lock.json
+!/.gitignore
