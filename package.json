@@ -1,5 +1,5 @@
 {
-  "name": "shell-spawn",
+  "name": "real-spawn",
   "version": "1.0.0",
   "description": "Simply spawn a command in a (new) shell/terminal (in its own process)",
   "main": "index.js",
@@ -15,5 +15,9 @@
   "devDependencies": {
     "@types/node": "^12.12.7",
     "typescript": "^3.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sliepe/real-spawn.git"
   }
 }
