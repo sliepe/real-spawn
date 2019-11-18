@@ -2,14 +2,20 @@
   "name": "example",
   "version": "1.0.0",
   "scripts": {
-    "example-node": "node node_modules/shell-spawn node example",
-    "example-tsc": "node node_modules/shell-spawn tsc --help",
-    "example-echo": "node node_modules/shell-spawn echo example",
-    "example-cmd-dir": "node node_modules/shell-spawn dir",
-    "example-bash-ls": "node node_modules/shell-spawn ls"
+    "example:node": "node node_modules/shell-spawn node example",
+    "example:tsc": "node node_modules/shell-spawn tsc --watch",
+    "example:echo": "node node_modules/shell-spawn echo example",
+    "example:cmd-dir": "node node_modules/shell-spawn dir",
+    "example:bash-ls": "node node_modules/shell-spawn ls",
+    "example:tsc-local": "shell-spawn node_modules/.bin/tsc --watch --listEmittedFiles",
+    "example:tsCleaner-local": "shell-spawn node_modules/.bin/ts-cleaner --src source --dist compiled --watch --verbose",
+    "example:run-parallel": "run-p example:tsc-local example:tsCleaner-local"
   },
   "dependencies": {},
   "devDependencies": {
-    "shell-spawn": "file:.."
+    "npm-run-all": "^4.1.5",
+    "shell-spawn": "file:..",
+    "ts-cleaner": "^1.0.3",
+    "typescript": "^3.7.2"
   }
 }
