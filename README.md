@@ -1,7 +1,7 @@
 # Why this node module?
 * I couldn't find a working node module, which simply spawns a new own shell for a process
 * Tested
-    * [cross-spawn](https://www.npmjs.com/package/cross-spawn), [concurrently](https://www.npmjs.com/package/concurrently), [parallelshell](https://www.npmjs.com/package/concurrently)
+    * [cross-spawn](https://www.npmjs.com/package/cross-spawn), [concurrently](https://www.npmjs.com/package/concurrently), [parallelshell](https://www.npmjs.com/package/parallelshell)
     * On system: Windows 7 (cmd, git bash), Node.js 12.9.1 (nvm 1.1.7)
 
 # Comments

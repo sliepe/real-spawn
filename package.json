@@ -1,6 +1,6 @@
 {
   "name": "real-spawn",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simply spawn a command in a (new) shell/terminal (in its own process)",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,17 @@
     "watch": "tsc --watch"
   },
   "bin": "./index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "shell",
+    "spawn",
+    "console",
+    "terminal",
+    "parallel",
+    "concurrent",
+    "command",
+    "process"
+  ],
+  "author": "Sebastian Liepe",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^12.12.7",
@@ -19,5 +27,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sliepe/real-spawn.git"
-  }
+  },
+  "license": "MIT"
 }
