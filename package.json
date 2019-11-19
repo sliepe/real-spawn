@@ -8,9 +8,8 @@
     "watch": "tsc --watch"
   },
   "bin": "./index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["shell", "spawn", "console", "terminal", "parallel", "concurrent", "command", "process"],
+  "author": "Sebastian Liepe",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^12.12.7",
@@ -19,5 +18,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sliepe/real-spawn.git"
-  }
+  },
+  "license": "MIT"
 }
