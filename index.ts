@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-import ShellSpawn from './shell-spawn/shell-spawn.js'; // We need tsconfig-paths then, if working with path`s compiler option
+import RealSpawn from './real-spawn/real-spawn.js'; // We need tsconfig-paths then, if working with path`s compiler option
 
-const shellSpawn = ShellSpawn.getInstance();
-shellSpawn.execute();
+const realSpawn = RealSpawn.getInstance();
+realSpawn.execute();

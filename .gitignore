@@ -2,7 +2,7 @@
 /*
 # ... but not the following
 !/index.*
-!/shell-spawn
+!/real-spawn
 !/package.json
 !/package-lock.json
 !/.gitignore
