@@ -1,6 +1,6 @@
 {
   "name": "real-spawn",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simply spawn a command in a new shell/terminal (in its own process)",
   "main": "index.js",
   "scripts": {
