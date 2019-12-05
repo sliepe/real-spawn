@@ -19,7 +19,9 @@
     "process"
   ],
   "author": "Sebastian Liepe",
-  "dependencies": {},
+  "dependencies": {
+    "command-path": "^1.0.2"
+  },
   "devDependencies": {
     "@types/node": "^12.12.7",
     "typescript": "^3.7.2"

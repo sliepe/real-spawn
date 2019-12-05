@@ -1,4 +1,6 @@
-export default class ShellSpawn {
+import CommandPath from "command-path";
+
+export default class RealSpawn {
     execute() {
         const child_process = require('child_process');
 
@@ -18,19 +20,8 @@ export default class ShellSpawn {
         };
         // ---
 
-        // We want to check, if a path separator is contained ---
-        const path = require('path');
-
-        const normalizedCommandPath = path.normalize(spawnCommand);
-
-        if (normalizedCommandPath.indexOf(path.sep) > -1) {
-            // Is it an relative path?
-            if (!path.isAbsolute(normalizedCommandPath)) {
-                const processCwd = process.cwd();
-                // Simply prepend current working dir of the node process
-                spawnCommand = processCwd + path.sep + spawnCommand;
-            }
-        }
+        // We want to check, spawn command is absolute, relative, local or global ---
+        spawnCommand = RealSpawn.prepareCommandName(spawnCommand);
         // ---
 
         // Spawn the process in a new shell
@@ -56,14 +47,48 @@ export default class ShellSpawn {
         });
     }
 
-    private static instance: ShellSpawn;
+    private static prepareCommandName(commandName: string) {
+        if (CommandPath.isAbsolute(commandName)) {
+            // Simply return
+            return commandName;
+        }
 
-    static getInstance(): ShellSpawn {
+        if (CommandPath.isRelative(commandName)) {
+            const processCwd = process.cwd();
+
+            const path = require('path');
+
+            // Simply prepend current working dir of the node process
+            return processCwd + path.sep + commandName;
+        }
+
+        if (CommandPath.isLocal(commandName)) {
+            // Get and return local command path
+            const localCommandPath = CommandPath.getLocal(commandName);
+
+            // If local path contains any whitespace
+            if (CommandPath.containsWhitespace(localCommandPath)) {
+                // Return with double quotes surrounded
+                return CommandPath.surroundWithDoubleQuotes(localCommandPath);
+            }
+
+            return localCommandPath;
+        }
+
+        if (CommandPath.isGlobal(commandName)) {
+            // Simply return
+            return commandName;
+        }
+    }
+
+    private static instance: RealSpawn;
+
+    static getInstance(): RealSpawn {
         if (this.instance) {
             return this.instance;
         }
 
-        this.instance = new ShellSpawn();
+        this.instance = new RealSpawn();
 
         return this.instance;
     }
